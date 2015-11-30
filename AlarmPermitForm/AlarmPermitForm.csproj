@@ -1,0 +1,505 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{4EF556A6-781C-4F59-BBE0-A8E892A56495}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>AlarmPermitForm</RootNamespace>
+    <AssemblyName>AlarmPermitForm</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.3\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.3\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.5.2\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\Antlr.3.4.1.9004\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.6.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Core">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Core.2.2.1\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Owin">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Owin.2.2.1\lib\net45\Microsoft.AspNet.Identity.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.EntityFramework">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.EntityFramework.2.2.1\lib\net45\Microsoft.AspNet.Identity.EntityFramework.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Entities\ApplicationPermit.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\css\admin.css" />
+    <Content Include="Content\css\custom.css" />
+    <Content Include="Content\css\dropdownmenu.css" />
+    <Content Include="Content\css\dropdownmenubutton.css" />
+    <Content Include="Content\css\dropdownmenu_1024.css" />
+    <Content Include="Content\css\dropdownmenu_800.css" />
+    <Content Include="Content\css\editor.css" />
+    <Content Include="Content\css\mobile.css" />
+    <Content Include="Content\css\print.css" />
+    <Content Include="Content\css\style.css" />
+    <Content Include="favicon.ico" />
+    <Content Include="Global.asax" />
+    <Content Include="Content\Site.css" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config" />
+    <Content Include="_gfx\cmn\arrow.gif" />
+    <Content Include="_gfx\cmn\attach.gif" />
+    <Content Include="_gfx\cmn\body_bg.jpg" />
+    <Content Include="_gfx\cmn\cal.gif" />
+    <Content Include="_gfx\cmn\comment.png" />
+    <Content Include="_gfx\cmn\database.png" />
+    <Content Include="_gfx\cmn\email_table.gif" />
+    <Content Include="_gfx\cmn\facebook.gif" />
+    <Content Include="_gfx\cmn\goBtn.gif" />
+    <Content Include="_gfx\cmn\grippie.png" />
+    <Content Include="_gfx\cmn\mobile\mobile_header.gif" />
+    <Content Include="_gfx\cmn\mobile\mobile_header_bg.gif" />
+    <Content Include="_gfx\cmn\mobile\mob_arrow_off.gif" />
+    <Content Include="_gfx\cmn\mobile\mob_arrow_on.gif" />
+    <Content Include="_gfx\cmn\mobile\mob_contactlink_bg.gif" />
+    <Content Include="_gfx\cmn\mobile\mob_down_arrow.gif" />
+    <Content Include="_gfx\cmn\mobile\mob_fullsitelink_icon.gif" />
+    <Content Include="_gfx\cmn\mobile\mob_header.gif" />
+    <Content Include="_gfx\cmn\mobile\mob_header_nav.gif" />
+    <Content Include="_gfx\cmn\mobile\mob_homelink_bg.gif" />
+    <Content Include="_gfx\cmn\mobile\mob_sitemaplink_bg.gif" />
+    <Content Include="_gfx\cmn\mobile\mob_visionlink_bg.jpg" />
+    <Content Include="_gfx\cmn\mobile\mob_visionlink_strip.gif" />
+    <Content Include="_gfx\cmn\or.gif" />
+    <Content Include="_gfx\cmn\rss.gif" />
+    <Content Include="_gfx\cmn\sitemap_bg.png" />
+    <Content Include="_gfx\cmn\social_bg.gif" />
+    <Content Include="_gfx\cmn\SortedAscending.gif" />
+    <Content Include="_gfx\cmn\SortedDescending.gif" />
+    <Content Include="_gfx\cmn\star6.gif" />
+    <Content Include="_gfx\cmn\twitter.gif" />
+    <Content Include="_gfx\cmn\youtube.gif" />
+    <Content Include="_gfx\downloadmessage\Acrobat.png" />
+    <Content Include="_gfx\downloadmessage\DWGicon.png" />
+    <Content Include="_gfx\downloadmessage\excel2007.gif" />
+    <Content Include="_gfx\downloadmessage\excelview.gif" />
+    <Content Include="_gfx\downloadmessage\excelview.png" />
+    <Content Include="_gfx\downloadmessage\Flash.png" />
+    <Content Include="_gfx\downloadmessage\getacro.gif" />
+    <Content Include="_gfx\downloadmessage\getacro.png" />
+    <Content Include="_gfx\downloadmessage\getwinzip.gif" />
+    <Content Include="_gfx\downloadmessage\getwinzip.png" />
+    <Content Include="_gfx\downloadmessage\powerpoint2007.gif" />
+    <Content Include="_gfx\downloadmessage\pptview.gif" />
+    <Content Include="_gfx\downloadmessage\pptview.png" />
+    <Content Include="_gfx\downloadmessage\Quicktime.png" />
+    <Content Include="_gfx\downloadmessage\Silverlight.png" />
+    <Content Include="_gfx\downloadmessage\valid-rss.png" />
+    <Content Include="_gfx\downloadmessage\visioview.gif" />
+    <Content Include="_gfx\downloadmessage\visioview.png" />
+    <Content Include="_gfx\downloadmessage\WMP.png" />
+    <Content Include="_gfx\downloadmessage\word2007.gif" />
+    <Content Include="_gfx\downloadmessage\wordview.gif" />
+    <Content Include="_gfx\downloadmessage\wordview.png" />
+    <Content Include="_gfx\home\alert_bg.gif" />
+    <Content Include="_gfx\home\arrow_left.gif" />
+    <Content Include="_gfx\home\arrow_right.gif" />
+    <Content Include="_gfx\home\buttons_next.png" />
+    <Content Include="_gfx\home\buttons_prev.png" />
+    <Content Include="_gfx\home\calendar_today.gif" />
+    <Content Include="_gfx\home\date_bg.gif" />
+    <Content Include="_gfx\home\events_bottom.png" />
+    <Content Include="_gfx\home\events_rss.gif" />
+    <Content Include="_gfx\home\events_strip.png" />
+    <Content Include="_gfx\home\events_sub.gif" />
+    <Content Include="_gfx\home\events_top.gif" />
+    <Content Include="_gfx\home\home_calendar.jpg" />
+    <Content Include="_gfx\home\iframe_placeholder.gif" />
+    <Content Include="_gfx\home\interactive_title.gif" />
+    <Content Include="_gfx\home\links_bg.png" />
+    <Content Include="_gfx\home\news_bg.jpg" />
+    <Content Include="_gfx\home\news_bottom.png" />
+    <Content Include="_gfx\home\news_strip.png" />
+    <Content Include="_gfx\home\news_thumb1.jpg" />
+    <Content Include="_gfx\home\news_thumb2.jpg" />
+    <Content Include="_gfx\home\news_thumb3.jpg" />
+    <Content Include="_gfx\home\news_top.png" />
+    <Content Include="_gfx\home\quicklinks_bottom.png" />
+    <Content Include="_gfx\home\quicklinks_strip.png" />
+    <Content Include="_gfx\home\quicklinks_top.jpg" />
+    <Content Include="_gfx\home\spotlight_bottom.png" />
+    <Content Include="_gfx\home\spotlight_strip.png" />
+    <Content Include="_gfx\home\spotlight_thumb.jpg" />
+    <Content Include="_gfx\home\spotlight_title.png" />
+    <Content Include="_gfx\home\tab1.gif" />
+    <Content Include="_gfx\home\tab2.gif" />
+    <Content Include="_gfx\home\tab3.gif" />
+    <Content Include="_gfx\home\tab4.gif" />
+    <Content Include="_gfx\home\tab5.gif" />
+    <Content Include="_gfx\home\tab6.png" />
+    <Content Include="_gfx\home\tab7.png" />
+    <Content Include="_gfx\home\video.jpg" />
+    <Content Include="_gfx\icons\2.gif" />
+    <Content Include="_gfx\icons\25.gif" />
+    <Content Include="_gfx\icons\47.gif" />
+    <Content Include="_gfx\icons\50.gif" />
+    <Content Include="_gfx\icons\51.gif" />
+    <Content Include="_gfx\icons\52.gif" />
+    <Content Include="_gfx\int\banner_bg.jpg" />
+    <Content Include="_gfx\int\blog\blog_bottom.gif" />
+    <Content Include="_gfx\int\blog\blog_title.gif" />
+    <Content Include="_gfx\int\calendar_add.gif" />
+    <Content Include="_gfx\int\content_banner_top.jpg" />
+    <Content Include="_gfx\int\content_bottom.png" />
+    <Content Include="_gfx\int\content_strip.png" />
+    <Content Include="_gfx\int\content_top.jpg" />
+    <Content Include="_gfx\int\deptbox_bottom.gif" />
+    <Content Include="_gfx\int\dept_banner.jpg" />
+    <Content Include="_gfx\int\events_title.gif" />
+    <Content Include="_gfx\int\feedback.gif" />
+    <Content Include="_gfx\int\google.gif" />
+    <Content Include="_gfx\int\ical.png" />
+    <Content Include="_gfx\int\news_title.gif" />
+    <Content Include="_gfx\int\noleft_content_bottom.png" />
+    <Content Include="_gfx\int\noleft_content_strip.png" />
+    <Content Include="_gfx\int\noleft_content_top.jpg" />
+    <Content Include="_gfx\int\print.gif" />
+    <Content Include="_gfx\int\quote_end.gif" />
+    <Content Include="_gfx\int\quote_start.gif" />
+    <Content Include="_gfx\int\reCAPTCHA\HelpIcon.png" />
+    <Content Include="_gfx\int\reCAPTCHA\help_icon.gif" />
+    <Content Include="_gfx\int\reCAPTCHA\reload_icon.gif" />
+    <Content Include="_gfx\int\reCAPTCHA\sound_icon.gif" />
+    <Content Include="_gfx\int\rss.gif" />
+    <Content Include="_gfx\int\share\del.jpg" />
+    <Content Include="_gfx\int\share\digg.jpg" />
+    <Content Include="_gfx\int\share\email.jpg" />
+    <Content Include="_gfx\int\share\facebook.jpg" />
+    <Content Include="_gfx\int\share\google.jpg" />
+    <Content Include="_gfx\int\share\live.jpg" />
+    <Content Include="_gfx\int\share\myspace.jpg" />
+    <Content Include="_gfx\int\share\print.jpg" />
+    <Content Include="_gfx\int\share\reddit.jpg" />
+    <Content Include="_gfx\int\share\share.gif" />
+    <Content Include="_gfx\int\share\share.jpg" />
+    <Content Include="_gfx\int\share\stumble.jpg" />
+    <Content Include="_gfx\int\share\twitter.jpg" />
+    <Content Include="_gfx\int\yahoo.gif" />
+    <Content Include="_gfx\nav\1.png" />
+    <Content Include="_gfx\nav\2.png" />
+    <Content Include="_gfx\nav\3.png" />
+    <Content Include="_gfx\nav\4.png" />
+    <Content Include="_gfx\nav\5.png" />
+    <Content Include="_gfx\nav\6.png" />
+    <Content Include="_gfx\nav\arrow_down.gif" />
+    <Content Include="_gfx\nav\arrow_down_over.gif" />
+    <Content Include="_gfx\nav\arrow_right.gif" />
+    <Content Include="_gfx\nav\arrow_right_dropdown.gif" />
+    <Content Include="_gfx\nav\arrow_right_over.gif" />
+    <Content Include="_gfx\nav\arrow_right_root.gif" />
+    <Content Include="_gfx\nav\leftnav_bg.jpg" />
+    <Content Include="_gfx\nav\leftnav_haschildren.gif" />
+    <Content Include="_gfx\nav\leftnav_over.gif" />
+    <Content Include="_gfx\nav\mainnav_over.gif" />
+    <Content Include="_gfx\spacer.gif" />
+    <Content Include="_gfx\_SiteMap\file.gif" />
+    <Content Include="_gfx\_SiteMap\folder.gif" />
+    <Content Include="_gfx\_SiteMap\Lines\dash.gif" />
+    <Content Include="_gfx\_SiteMap\Lines\i.gif" />
+    <Content Include="_gfx\_SiteMap\Lines\l.gif" />
+    <Content Include="_gfx\_SiteMap\Lines\noexpand.gif" />
+    <Content Include="_gfx\_SiteMap\Lines\r.gif" />
+    <Content Include="_gfx\_SiteMap\Lines\t.gif" />
+    <Content Include="_gfx\_SiteMap\menu.gif" />
+    <Content Include="_gfx\_TreeView\action.gif" />
+    <Content Include="_gfx\_TreeView\admin_tools.gif" />
+    <Content Include="_gfx\_TreeView\cd.gif" />
+    <Content Include="_gfx\_TreeView\cg.gif" />
+    <Content Include="_gfx\_TreeView\col.gif" />
+    <Content Include="_gfx\_TreeView\content_type.gif" />
+    <Content Include="_gfx\_TreeView\control_panel.gif" />
+    <Content Include="_gfx\_TreeView\desktop.gif" />
+    <Content Include="_gfx\_TreeView\dropdown.gif" />
+    <Content Include="_gfx\_TreeView\dvd.gif" />
+    <Content Include="_gfx\_TreeView\email_notif.gif" />
+    <Content Include="_gfx\_TreeView\entire_network.gif" />
+    <Content Include="_gfx\_TreeView\excel.gif" />
+    <Content Include="_gfx\_TreeView\excelx.gif" />
+    <Content Include="_gfx\_TreeView\exp.gif" />
+    <Content Include="_gfx\_TreeView\floppy.gif" />
+    <Content Include="_gfx\_TreeView\folder.gif" />
+    <Content Include="_gfx\_TreeView\folder_docs.gif" />
+    <Content Include="_gfx\_TreeView\folder_fonts.gif" />
+    <Content Include="_gfx\_TreeView\folder_music.gif" />
+    <Content Include="_gfx\_TreeView\folder_open.gif" />
+    <Content Include="_gfx\_TreeView\folder_pictures.gif" />
+    <Content Include="_gfx\_TreeView\folder_shared.gif" />
+    <Content Include="_gfx\_TreeView\folder_tasks.gif" />
+    <Content Include="_gfx\_TreeView\folder_web.gif" />
+    <Content Include="_gfx\_TreeView\hard_drive.gif" />
+    <Content Include="_gfx\_TreeView\icon_up.gif" />
+    <Content Include="_gfx\_TreeView\image.gif" />
+    <Content Include="_gfx\_TreeView\Lines\dash.gif" />
+    <Content Include="_gfx\_TreeView\Lines\dashminus.gif" />
+    <Content Include="_gfx\_TreeView\Lines\dashplus.gif" />
+    <Content Include="_gfx\_TreeView\Lines\i.gif" />
+    <Content Include="_gfx\_TreeView\Lines\l.gif" />
+    <Content Include="_gfx\_TreeView\Lines\lminus.gif" />
+    <Content Include="_gfx\_TreeView\Lines\lplus.gif" />
+    <Content Include="_gfx\_TreeView\Lines\minus.gif" />
+    <Content Include="_gfx\_TreeView\Lines\noexpand.gif" />
+    <Content Include="_gfx\_TreeView\Lines\plus.gif" />
+    <Content Include="_gfx\_TreeView\Lines\r.gif" />
+    <Content Include="_gfx\_TreeView\Lines\rminus.gif" />
+    <Content Include="_gfx\_TreeView\Lines\rplus.gif" />
+    <Content Include="_gfx\_TreeView\Lines\t.gif" />
+    <Content Include="_gfx\_TreeView\Lines\tminus.gif" />
+    <Content Include="_gfx\_TreeView\Lines\tplus.gif" />
+    <Content Include="_gfx\_TreeView\member.gif" />
+    <Content Include="_gfx\_TreeView\member_grp.gif" />
+    <Content Include="_gfx\_TreeView\mycomp.gif" />
+    <Content Include="_gfx\_TreeView\mynet.gif" />
+    <Content Include="_gfx\_TreeView\network_folder.gif" />
+    <Content Include="_gfx\_TreeView\network_node.gif" />
+    <Content Include="_gfx\_TreeView\net_connections.gif" />
+    <Content Include="_gfx\_TreeView\old\admin_tools.gif" />
+    <Content Include="_gfx\_TreeView\old\cd.gif" />
+    <Content Include="_gfx\_TreeView\old\control_panel.gif" />
+    <Content Include="_gfx\_TreeView\old\desktop.gif" />
+    <Content Include="_gfx\_TreeView\old\dvd.gif" />
+    <Content Include="_gfx\_TreeView\old\entire_network.gif" />
+    <Content Include="_gfx\_TreeView\old\floppy.gif" />
+    <Content Include="_gfx\_TreeView\old\folder.gif" />
+    <Content Include="_gfx\_TreeView\old\folder_docs.gif" />
+    <Content Include="_gfx\_TreeView\old\folder_fonts.gif" />
+    <Content Include="_gfx\_TreeView\old\folder_music.gif" />
+    <Content Include="_gfx\_TreeView\old\folder_open.gif" />
+    <Content Include="_gfx\_TreeView\old\folder_pictures.gif" />
+    <Content Include="_gfx\_TreeView\old\folder_shared.gif" />
+    <Content Include="_gfx\_TreeView\old\folder_tasks.gif" />
+    <Content Include="_gfx\_TreeView\old\folder_web.gif" />
+    <Content Include="_gfx\_TreeView\old\hard_drive.gif" />
+    <Content Include="_gfx\_TreeView\old\mycomp.gif" />
+    <Content Include="_gfx\_TreeView\old\mynet.gif" />
+    <Content Include="_gfx\_TreeView\old\network_folder.gif" />
+    <Content Include="_gfx\_TreeView\old\network_node.gif" />
+    <Content Include="_gfx\_TreeView\old\net_connections.gif" />
+    <Content Include="_gfx\_TreeView\old\printers.gif" />
+    <Content Include="_gfx\_TreeView\old\recycle.gif" />
+    <Content Include="_gfx\_TreeView\old\scanners.gif" />
+    <Content Include="_gfx\_TreeView\old\scheduled_tasks.gif" />
+    <Content Include="_gfx\_TreeView\old\spacer.gif" />
+    <Content Include="_gfx\_TreeView\old\user.gif" />
+    <Content Include="_gfx\_TreeView\old\workgroup.gif" />
+    <Content Include="_gfx\_TreeView\old_folder.gif" />
+    <Content Include="_gfx\_TreeView\old_folder_open.gif" />
+    <Content Include="_gfx\_TreeView\old_image.gif" />
+    <Content Include="_gfx\_TreeView\otherdoc.gif" />
+    <Content Include="_gfx\_TreeView\pdf.gif" />
+    <Content Include="_gfx\_TreeView\powerpoint.gif" />
+    <Content Include="_gfx\_TreeView\powerpointx.gif" />
+    <Content Include="_gfx\_TreeView\printers.gif" />
+    <Content Include="_gfx\_TreeView\recycle.gif" />
+    <Content Include="_gfx\_TreeView\role.gif" />
+    <Content Include="_gfx\_TreeView\roles.gif" />
+    <Content Include="_gfx\_TreeView\scanners.gif" />
+    <Content Include="_gfx\_TreeView\scheduled_tasks.gif" />
+    <Content Include="_gfx\_TreeView\spacer.gif" />
+    <Content Include="_gfx\_TreeView\text.gif" />
+    <Content Include="_gfx\_TreeView\user.gif" />
+    <Content Include="_gfx\_TreeView\users.gif" />
+    <Content Include="_gfx\_TreeView\wf.gif" />
+    <Content Include="_gfx\_TreeView\wf_state.gif" />
+    <Content Include="_gfx\_TreeView\word.gif" />
+    <Content Include="_gfx\_TreeView\wordx.gif" />
+    <Content Include="_gfx\_TreeView\workgroup.gif" />
+    <Content Include="_gfx\_TreeView\zip.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Abstract\" />
+    <Folder Include="App_Data\" />
+    <Folder Include="Models\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages.config" />
+    <None Include="Project_Readme.html" />
+    <Content Include="Views\Shared\_HomeLayout.cshtml" />
+    <Content Include="_gfx\cmn\mobile\Thumbs.db" />
+    <Content Include="_gfx\cmn\Thumbs.db" />
+    <Content Include="_gfx\downloadmessage\Thumbs.db" />
+    <Content Include="_gfx\home\Thumbs.db" />
+    <Content Include="_gfx\icons\Thumbs.db" />
+    <Content Include="_gfx\icons\vssver2.scc" />
+    <Content Include="_gfx\int\blog\Thumbs.db" />
+    <Content Include="_gfx\int\reCAPTCHA\Thumbs.db" />
+    <Content Include="_gfx\int\share\Thumbs.db" />
+    <Content Include="_gfx\int\Thumbs.db" />
+    <Content Include="_gfx\nav\Thumbs.db" />
+    <Content Include="_gfx\_SiteMap\Lines\vssver2.scc" />
+    <Content Include="_gfx\_TreeView\Lines\vssver2.scc" />
+    <Content Include="_gfx\_TreeView\old\vssver2.scc" />
+    <Content Include="_gfx\_TreeView\Thumbs.db" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Home\Success.cshtml" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>61016</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:61016/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

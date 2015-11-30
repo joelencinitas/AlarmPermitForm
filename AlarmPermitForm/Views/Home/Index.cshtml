@@ -1,0 +1,231 @@
+﻿@model AlarmPermitForm.Entities.ApplicationPermit
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_HomeLayout.cshtml";
+}
+
+
+<style type="text/css">
+    body {
+        font-size: 18px;
+    }
+
+    .formlabel {
+        width: 25%;
+        font-size: 18px;
+        text-align: right;
+        vertical-align: middle;
+        float: left;
+    }
+
+    .formfield {
+        width: 70%;
+        text-align: left;
+        font-size: 18px;
+        padding-left: 15px;
+        float: left;
+    }
+
+    .clear {
+        clear: left;
+        line-height: 15px;
+    }
+
+    select{
+        width: 350px;
+        height: 30px;
+        font-size: 18px;
+    }
+
+    input[type=text]{
+        width: 350px;
+        height: 30px;
+        font-size: 18px;
+    }
+
+        .myInput[placeholder] {
+            line-height: 30px;
+            font-size: 18px;
+        }
+
+    input[type=radio] {
+        zoom: 1.5;
+    }
+
+    input[type=checkbox] {
+        zoom: 1.5;
+    }
+
+    .input-validation-error {
+        border: 1px solid #ff0000;
+    }
+
+    input[type=submit] {
+    padding:5px 15px; 
+    background:#ccc; 
+    border:0 none;
+    cursor:pointer;
+    -webkit-border-radius: 5px;
+    border-radius: 5px; 
+    height: 30px;
+    font-weight: bold;
+}
+</style>
+
+<div class="top_container">
+    <div class="mainContent">
+        <div style="text-align: center; font-size: 18px;">
+            <h1 style="font-size: 26px; ">ALARM PERMIT APPLICATION</h1>
+            <h3>Fee $118 per alarm system</h3>
+            <p style="font-size: 12px;">The following are exempt per Municipal Code 6.30.010: Municipal, County, State and Federal Agencies, Banks and Schools.</p>
+        </div>
+
+        <div style="line-height: 30px;">&nbsp;</div>
+
+        @using (Html.BeginForm())
+        {
+            @Html.ValidationSummary(true)
+
+            <h3>Application Information</h3>
+            <div style="line-height: 30px;">&nbsp;</div>
+
+            <div class="formlabel">Company Type:</div>
+            <div class="formfield"><input type="radio" value="Business" name="PermitType" id="PermitType" /> Business &nbsp;&nbsp;&nbsp; <input type="radio" value="Residential" name="PermitType" id="PermitType" checked="checked" /> Residential</div>
+            <div class="clear">&nbsp;</div>
+
+                    <div class="formlabel">@Html.Label("Company Name"):</div>
+                    <div class="formfield">@Html.TextBoxFor(model => model.CompanyName)</div>
+                    <div class="clear">&nbsp;</div>
+
+                    <div class="formlabel">@Html.Label("First Name"):</div>
+                    <div class="formfield">@Html.TextBoxFor(model => model.FirstName)</div>
+                    <div class="clear">&nbsp;</div>
+
+                    <div class="formlabel">@Html.Label("Middle Name"):</div>
+                    <div class="formfield">@Html.TextBoxFor(model => model.MiddleName)</div>
+                    <div class="clear">&nbsp;</div>
+
+                    <div class="formlabel">@Html.Label("Last Name"):</div>
+                    <div class="formfield">@Html.TextBoxFor(model => model.LastName)</div>
+                    <div class="clear">&nbsp;</div>
+
+                    <div class="formlabel">@Html.Label("Street Address"):</div>
+                    <div class="formfield">@Html.TextBoxFor(model => model.StreetAddress)</div>
+                    <div class="clear">&nbsp;</div>
+
+                    <div class="formlabel">@Html.Label("City"):</div>
+                    <div class="formfield">@Html.TextBoxFor(model => model.City)</div>
+                    <div class="clear">&nbsp;</div>
+
+                    <div class="formlabel">@Html.Label("State"):</div>
+                    <div class="formfield">@Html.TextBoxFor(model => model.State)</div>
+                    <div class="clear">&nbsp;</div>
+
+                    <div class="formlabel">@Html.Label("Zip Code"):</div>
+                    <div class="formfield">@Html.TextBoxFor(model => model.ZipCode)</div>
+                    <div class="clear">&nbsp;</div>
+
+                    <div class="formlabel">@Html.Label("Email"):</div>
+                    <div class="formfield">@Html.TextBoxFor(model => model.EmailAddress)</div>
+                    <div class="clear">&nbsp;</div>
+
+                    <div class="formlabel">@Html.Label("Business Phone"):</div>
+                    <div class="formfield">@Html.TextBoxFor(model => model.BusinessPhone)</div>
+                    <div class="clear">&nbsp;</div>
+
+                    <div class="formlabel">@Html.Label("Home Phone"):</div>
+                    <div class="formfield">@Html.TextBoxFor(model => model.HomePhone)</div>
+                    <div class="clear">&nbsp;</div>
+
+                    <div class="formlabel">@Html.Label("Mobile Phone"):</div>
+                    <div class="formfield">@Html.TextBoxFor(model => model.MobilePhone)</div>
+                    <div class="clear">&nbsp;</div>
+
+                    <div class="formlabel">@Html.Label("Contact Preference"):</div>
+                    <div class="formfield">
+                        @Html.DropDownListFor(model => model.ContactPreference, new SelectList(new List<Object> {
+                                  new { value = "Email", text = "Email" },
+                                  new { value = "Mail", text = "Mail"}
+                                }, "value", "text", 2))
+                </div>
+                <div class="clear">&nbsp;</div>
+
+                <h3>Mailing Information</h3>
+                <p>if mailing address is different from location of Alarm System, complete this section:</p>
+                <div style="line-height: 30px;">&nbsp;</div>
+
+                <div class="formlabel">@Html.Label("Street Address"):</div>
+                <div class="formfield">@Html.TextBoxFor(model => model.MailingAddress)</div>
+                <div class="clear">&nbsp;</div>
+
+                <div class="formlabel">@Html.Label("City"):</div>
+                <div class="formfield">@Html.TextBoxFor(model => model.MailingCity)</div>
+                <div class="clear">&nbsp;</div>
+
+                <div class="formlabel">@Html.Label("State"):</div>
+                <div class="formfield">@Html.TextBoxFor(model => model.MailingState)</div>
+                <div class="clear">&nbsp;</div>
+
+                <div class="formlabel">@Html.Label("Zip Code"):</div>
+                <div class="formfield">@Html.TextBoxFor(model => model.MailingZipCode)</div>
+                <div class="clear">&nbsp;</div>
+
+                <div class="formlabel">@Html.Label("County"):</div>
+                <div class="formfield">@Html.TextBoxFor(model => model.MailingCounty)</div>
+                <div class="clear">&nbsp;</div>
+
+                <h3>Alarm Monitoring Company</h3>
+                <div style="line-height: 30px;">&nbsp;</div>
+
+                <div class="formlabel">@Html.Label("Company Name"):</div>
+                <div class="formfield">@Html.TextBoxFor(model => model.MonitoringCompanyName)</div>
+                <div class="clear">&nbsp;</div>
+
+                <div class="formlabel">@Html.Label("Street Address"):</div>
+                <div class="formfield">@Html.TextBoxFor(model => model.MonitoringCompanyAddress)</div>
+                <div class="clear">&nbsp;</div>
+
+                <div class="formlabel">@Html.Label("City"):</div>
+                <div class="formfield">@Html.TextBoxFor(model => model.MonitoringCompanyCity)</div>
+                <div class="clear">&nbsp;</div>
+
+                <div class="formlabel">@Html.Label("State"):</div>
+                <div class="formfield">@Html.TextBoxFor(model => model.MonitoringCompanyState)</div>
+                <div class="clear">&nbsp;</div>
+
+                <div class="formlabel">@Html.Label("Zip Code"):</div>
+                <div class="formfield">@Html.TextBoxFor(model => model.MonitoringCompanyZip)</div>
+                <div class="clear">&nbsp;</div>
+
+                <div class="formlabel">@Html.Label("County"):</div>
+                <div class="formfield">@Html.TextBoxFor(model => model.MonitoringCompanyCounty)</div>
+                <div class="clear">&nbsp;</div>
+
+                <div class="formlabel">@Html.Label("Email Address"):</div>
+                <div class="formfield">@Html.TextBoxFor(model => model.MonitoringCompanyEmail)</div>
+                <div class="clear">&nbsp;</div>
+
+                <div class="formlabel">@Html.Label("Business Phone"):</div>
+                <div class="formfield">@Html.TextBoxFor(model => model.MonitoringCompanyBusinessPhone)</div>
+                <div class="clear">&nbsp;</div>
+
+                <div class="formlabel">@Html.Label("Mobile Phone"):</div>
+                <div class="formfield">@Html.TextBoxFor(model => model.MonitoringCompanyMobilePhone)</div>
+                <div class="clear">&nbsp;</div>
+
+                <div class="formlabel">&nbsp;</div>
+                <div class="formfield"><input type="submit" value="Submit Alarm Application" /></div>
+                <div class="clear">&nbsp;</div>
+
+
+
+                }
+
+
+
+
+
+
+            </div>
+        </div>
+
